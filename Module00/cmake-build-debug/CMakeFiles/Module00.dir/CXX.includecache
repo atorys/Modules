@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/atory/CLionProjects/Modules/Module00/ex01/main.cpp
+phonebook.hpp
+/home/atory/CLionProjects/Modules/Module00/ex01/phonebook.hpp
+
+/home/atory/CLionProjects/Modules/Module00/ex01/phonebook.hpp
+iostream
+-
+cstring
+-
+
