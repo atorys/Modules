@@ -5,4 +5,5 @@ CMakeFiles/Module00.dir/ex01/main.cpp.o: \
  ../ex01/main.cpp \
  ../ex01/phonebook.hpp
 CMakeFiles/Module00.dir/ex01/phonebook.cpp.o: \
- ../ex01/phonebook.cpp
+ ../ex01/phonebook.cpp \
+ ../ex01/phonebook.hpp

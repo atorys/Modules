@@ -15,7 +15,7 @@
 #define DEF_COLOR "\033[0m"
 #define TABS "\t\t\t"
 #define COMMANDS "> ADD\n> SEARCH\n> EXIT\n"
-#define NAME_HEADER TABS "PHONEBOOK\n================================\n"
+#define NAME_HEADER TABS "PHONEBOOK\n=================================\n"
 
 class Contact {
 public:
@@ -28,11 +28,12 @@ public:
 
 class Book {
     Contact contacts[8];
-    int     contacts_count;
+    int     contactsCount;
 public:
-    Init();
+    Book();
     void add();
     void search();
+    void printContact(Contact contact);
 };
 
 #endif
