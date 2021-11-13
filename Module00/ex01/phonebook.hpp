@@ -7,10 +7,9 @@
 
 #include <iostream>
 #include <cstring>
+#include <cstdlib>
+#include <iomanip>
 
-#define EXIT "EXIT"
-#define SEARCH "SEARCH"
-#define ADD "ADD"
 #define COLOR "\033[34m"
 #define DEF_COLOR "\033[0m"
 #define TABS "\t\t\t"
@@ -18,22 +17,25 @@
 #define NAME_HEADER TABS "PHONEBOOK\n=================================\n"
 
 class Contact {
+    std::string info[5];
 public:
-    std::string first_name;
-    std::string last_name;
-    std::string nickname;
-    std::string phone_number;
-    std::string secret;
+    void setField(int index, std::string value){
+        info[index] = value;
+    }
+    std::string getField(int index) {
+        return info[index];
+    }
 };
 
 class Book {
     Contact contacts[8];
+    int     lastAddedInd;
     int     contactsCount;
 public:
     Book();
     void add();
     void search();
-    void printContact(Contact contact);
+    void printContactField(std::string field);
 };
 
 #endif

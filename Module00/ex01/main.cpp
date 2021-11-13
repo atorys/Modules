@@ -12,12 +12,14 @@ int main(void)
     std::cout << COLOR << NAME_HEADER << COMMANDS << DEF_COLOR;
     std::cout << "> ";
     while (getline(std::cin, line, '\n')) {
-        if (!line.compare(SEARCH))
+        if (!line.compare("SEARCH"))
             newBook.search();
-        else if (!line.compare(ADD))
+        else if (!line.compare("ADD"))
             newBook.add();
-        else if (!line.compare(EXIT))
-            break ;
+        else if (!line.compare("EXIT")) {
+            std::cout << COLOR << "deleting phonebook data.... exit" << std::endl;
+            return (0);
+        }
         else
             std::cout << COLOR << "available commands:\n" << COMMANDS << DEF_COLOR;
         std::cout << "> ";
