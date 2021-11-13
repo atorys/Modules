@@ -1,0 +1,7 @@
+/snap/clion/169/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - Unix Makefiles" /home/atory/CLionProjects/Modules/Module01
+-- Configuring done
+CMake Error at CMakeLists.txt:6 (add_executable):
+  No SOURCES given to target: Module01
+
+
+CMake Generate step failed.  Build files cannot be regenerated correctly.
