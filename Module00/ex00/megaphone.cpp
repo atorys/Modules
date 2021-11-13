@@ -13,7 +13,8 @@ int main(int ac, char **av)
     }
     for (int i = 1; i < ac; i++) {
         for (int j = 0; j < (int)std::strlen(av[i]); j++)
-            std::islower(av[i][j]) ? av[i][j] = std::toupper(av[i][j]) : 0;
+            if (std::islower(av[i][j]))
+                av[i][j] = std::toupper(av[i][j]);
         std::cout << av[i];
     }
     std::cout << std::endl;
