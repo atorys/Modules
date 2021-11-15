@@ -40,7 +40,7 @@ void Book::search() {
     std::cout << "---------------------------------------------" << std::endl;
 
     for (int i = 0; i < contactsCount; i++) {
-        std::cout << "|         " << i << "|";
+        std::cout << "|         " << i + 1 << "|";
         for (int n_f = 0; n_f < 3; n_f++)
             printContactField(contacts[i].getField(n_f));
         std::cout << std::endl;
@@ -53,19 +53,22 @@ void Book::search() {
     for (int i = 0; i < (int)line.length(); i++)
         if (!std::isdigit(line[i]) && !index) {
             index = -1;
-            std::cout << "Index does not exist" << std::endl;
+            std::cout << COLOR << "Index does not exist !" << DEF_COLOR << std::endl;
         }
     if (index != -1)
     {
         index = std::strtol(line.c_str(), NULL, 10);
         if (index < contactsCount && index >= 0 && index < 8) {
+        	std::cout << "    ind     first name  last name  nickname    number     secret" << std::endl;
+        	std::cout << "-------------------------------------------------------------------" << std::endl;
             std::cout << "|         " << index << "|";
             for (int n_f = 0; n_f < 5; n_f++)
                 printContactField(contacts[index].getField(n_f));
             std::cout << std::endl;
+            std::cout << "-------------------------------------------------------------------" << std::endl;
         }
         else
-            std::cout << "Index does not exist" << std::endl;
+        	std::cout << COLOR << "Index does not exist !" << DEF_COLOR << std::endl;
     }
 }
 

@@ -19,12 +19,8 @@
 class Contact {
     std::string info[5];
 public:
-    void setField(int index, std::string value){
-        info[index] = value;
-    }
-    std::string getField(int index) {
-        return info[index];
-    }
+    void setField(int index, std::string value);
+    std::string getField(int index);
 };
 
 class Book {
