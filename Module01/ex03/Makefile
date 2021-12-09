@@ -2,11 +2,13 @@
 NAME	=	test
 
 FILES	=	main.cpp \
-			Zombie.cpp \
-			newZombie.cpp \
-			randomChump.cpp \
+			Weapon.cpp \
+			HumanA.cpp \
+			HumanB.cpp
 
-HEADERS	=	Zombie.hpp
+HEADERS	=	Weapon.hpp \
+			HumanA.hpp \
+			HumanB.hpp
 
 OBJ_DIR	=	./obj/
 OBJ		=	$(addprefix $(OBJ_DIR), $(FILES:.cpp=.o))

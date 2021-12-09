@@ -1,3 +1,0 @@
-/home/atory/CLionProjects/Modules/Module00/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/atory/CLionProjects/Modules/Module00/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/atory/CLionProjects/Modules/Module00/cmake-build-debug/CMakeFiles/Module00.dir

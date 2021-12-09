@@ -1,12 +1,7 @@
 #:::: INFO :::::::::::::::::::::::::::::::::::::::::::::::::::
-NAME	=	test
+NAME	=	replace
 
-FILES	=	main.cpp \
-			Zombie.cpp \
-			newZombie.cpp \
-			randomChump.cpp \
-
-HEADERS	=	Zombie.hpp
+FILES	=	main.cpp
 
 OBJ_DIR	=	./obj/
 OBJ		=	$(addprefix $(OBJ_DIR), $(FILES:.cpp=.o))
@@ -29,7 +24,7 @@ $(NAME)	:	obj $(OBJ)
 obj		:
 			@mkdir -p obj/
 
-obj/%.o	:	%.cpp $(HEADERS)
+obj/%.o	:	%.cpp
 			@$(COMPILE) $(FLAGS) -c $< -o $@
 
 clean	:

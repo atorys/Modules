@@ -1,13 +1,10 @@
 #:::: INFO :::::::::::::::::::::::::::::::::::::::::::::::::::
-NAME	=	test
+NAME	=	karen
 
 FILES	=	main.cpp \
-			Zombie.cpp \
-			newZombie.cpp \
-			randomChump.cpp \
+			Karen.cpp
 
-HEADERS	=	Zombie.hpp
-
+HEADERS	=	Karen.hpp
 OBJ_DIR	=	./obj/
 OBJ		=	$(addprefix $(OBJ_DIR), $(FILES:.cpp=.o))
 FLAGS	=	-Wall -Wextra -Werror -std=c++98

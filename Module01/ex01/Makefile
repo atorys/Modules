@@ -3,8 +3,7 @@ NAME	=	test
 
 FILES	=	main.cpp \
 			Zombie.cpp \
-			newZombie.cpp \
-			randomChump.cpp \
+			ZombieHorde.cpp
 
 HEADERS	=	Zombie.hpp
 
