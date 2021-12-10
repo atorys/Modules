@@ -45,14 +45,26 @@ void Karen::complain(const std::string level)
 	switch (index)
 	{
 		case 0:
-			(this->*complains[0])(); break;
+		{
+			std::cout << "[ " + levels[0] + " ]" << std::endl;
+			(this->*complains[0])();
+		}
 		case 1:
-			(this->*complains[1])(); break;
+		{
+			std::cout << "[ " + levels[1] + " ]" << std::endl;
+			(this->*complains[1])();
+		}
 		case 2:
-			(this->*complains[2])(); break;
+		{
+			std::cout << "[ " + levels[2] + " ]" << std::endl;
+			(this->*complains[2])();
+		}
 		case 3:
-			(this->*complains[3])(); break;
+		{
+			std::cout << "[ " + levels[3] + " ]" << std::endl;
+			(this->*complains[3])(); break ;
+		}
 		default:
-			std::cout << level << " : " << "Such complain does not exist!!" << std::endl;
+			std::cout << "[ Such complain does not exist!! ]" << std::endl;
 	}
 }
