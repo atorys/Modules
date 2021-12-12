@@ -17,7 +17,7 @@
  */
 Fixed::Fixed(): _value(0) {
     std::cout << COLOR_V;
-    std::cout << "[ DEF Constructor called. ]\n";
+//    std::cout << "FIXED: [ DEF Constructor called. ]\n";
     std::cout << COLOR_DEF;
 }
 
@@ -28,7 +28,7 @@ Fixed::Fixed(): _value(0) {
  */
 Fixed::Fixed(const int value) {
     std::cout << COLOR_V;
-    std::cout << "[ INT Constructor called. ]\n";
+//    std::cout << "FIXED: [ INT Constructor called. ]\n";
     _value = value << _bits;
     std::cout << COLOR_DEF;
 }
@@ -45,21 +45,21 @@ Fixed::Fixed(const int value) {
  */
 Fixed::Fixed(const float value) {
     std::cout << COLOR_V;
-    std::cout << "[ FLOAT Constructor called. ]\n";
+//    std::cout << "FIXED: [ FLOAT Constructor called. ]\n";
     _value = roundf(value * (1 << _bits));
     std::cout << COLOR_DEF;
 }
 
 Fixed::Fixed(const Fixed &copy) {
     std::cout << COLOR_G;
-    std::cout << "[ Copy constructor called. ]\n";
+//    std::cout << "[ Copy constructor called. ]\n";
     *this = copy;
     std::cout << COLOR_DEF;
 }
 
 Fixed::~Fixed() {
     std::cout << COLOR_R;
-    std::cout << "[ DEF Destructor called. ]\n";
+//    std::cout << "FIXED: [ DEF Destructor called. ]\n";
     std::cout << COLOR_DEF;
 }
 
