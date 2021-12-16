@@ -46,7 +46,8 @@ Fixed::Fixed(const int value) {
 Fixed::Fixed(const float value) {
     std::cout << COLOR_V;
     std::cout << "[ FLOAT Constructor called. ]\n";
-    _value = roundf(value * (1 << _bits));
+	float power = 1 << _bits;
+    _value = roundf(value * power);
     std::cout << COLOR_DEF;
 }
 
@@ -81,7 +82,8 @@ int Fixed::toInt() const {
 }
 
 float Fixed::toFloat() const {
-    return ((float)_value / (float)(1 << _bits));
+	float power = 1 << _bits;
+    return (_value / power);
 }
 
 /*
