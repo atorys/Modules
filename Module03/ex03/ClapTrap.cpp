@@ -18,27 +18,38 @@ ClapTrap::ClapTrap(std::string name): _name(name), _hitPoints(10), _energyPoints
     std::cout << "[ DEF Constructor ]\n";
 }
 
-//ClapTrap::ClapTrap(const ClapTrap &anotherClapTrap) {
-//    *this = anotherClapTrap;
-//    std::cout << COLOR_B << "CLAPTRAP : " << this->_name + " " << COLOR_DEF;
-//    std::cout << "[ COPY Constructor ]\n";
-//}
+ClapTrap::ClapTrap(std::string name,
+                   unsigned int hP,
+                   unsigned int eP,
+                   unsigned int damage):
+                   _name(name), _hitPoints(hP), _energyPoints(eP), _damage(damage)
+{
+    this->_name = name;
+    std::cout << COLOR_B << "CLAPTRAP : " << this->_name + " " << COLOR_DEF;
+    std::cout << "[ DEF Constructor ]\n";
+}
+
+ClapTrap::ClapTrap(const ClapTrap &anotherClapTrap) {
+    *this = anotherClapTrap;
+    std::cout << COLOR_B << "CLAPTRAP : " << this->_name + " " << COLOR_DEF;
+    std::cout << "[ COPY Constructor ]\n";
+}
 
 ClapTrap::~ClapTrap() {
     std::cout << COLOR_B << "CLAPTRAP : " << this->_name + " " << COLOR_DEF;
     std::cout << "[ DEF Destructor ]\n";
 }
 
-//ClapTrap &ClapTrap::operator=(const ClapTrap &anotherClapTrap) {
-//    std::cout << "[ Assignation operator called ]\n";
-//    if (this == &anotherClapTrap)
-//        return *this;
-//    this->_name = anotherClapTrap._name;
-//    this->_hitPoints = anotherClapTrap._hitPoints;
-//    this->_energyPoints = anotherClapTrap._energyPoints;
-//    this->_damage = anotherClapTrap._damage;
-//    return *this;
-//}
+ClapTrap &ClapTrap::operator=(const ClapTrap &anotherClapTrap) {
+    std::cout << "[ Assignation operator called ]\n";
+    if (this == &anotherClapTrap)
+        return *this;
+    this->_name = anotherClapTrap._name;
+    this->_hitPoints = anotherClapTrap._hitPoints;
+    this->_energyPoints = anotherClapTrap._energyPoints;
+    this->_damage = anotherClapTrap._damage;
+    return *this;
+}
 
 
 /**

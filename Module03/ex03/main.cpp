@@ -11,5 +11,6 @@ int main(void) {
     std::cout << "\n";
     dima.ScavTrap::attack("somebody");
     dima.whoAmI();
+    dima.highFivesGuys();
     return 0;
 }

@@ -13,7 +13,7 @@ HEADER	=	ClapTrap.hpp \
 			DiamondTrap.hpp
 OBJ_DIR	=	./obj/
 OBJ		=	$(addprefix $(OBJ_DIR), $(FILES:.cpp=.o))
-FLAGS	=	-Wall -Wextra -Werror -std=c++98 -Wno-shadow
+FLAGS	=	-Wall -Wextra -Werror -std=c++98 -Wno-shadow -Wshadow
 COMPILE	=	clang++
 
 #:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::

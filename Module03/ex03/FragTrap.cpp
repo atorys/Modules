@@ -10,29 +10,28 @@
  *  CONSTRUCTOR & DESTRUCTOR & COPY CONSTRUCTOR
  */
 
-FragTrap::FragTrap(std::string name): ClapTrap(name) {
-    this->_hitPoints = 100;
-    this->_energyPoints = 100;
-    this->_damage = 30;
+FragTrap::FragTrap() {}
+
+FragTrap::FragTrap(std::string name): ClapTrap(name, 100, 100, 30) {
     std::cout << COLOR_B << "FRAGTRAP : " << this->_name + " " << COLOR_DEF;
     std::cout << "[ DEF Constructor ]\n";
 }
 
-//FragTrap::FragTrap(const FragTrap &anotherFragTrap) {
-//    *this = anotherFragTrap;
-//    std::cout << COLOR_B << "FRAGTRAP : " << this->_name + " " << COLOR_DEF;
-//    std::cout << "[ COPY Constructor ]\n";
-//}
+FragTrap::FragTrap(const FragTrap &anotherFragTrap) {
+    *this = anotherFragTrap;
+    std::cout << COLOR_B << "FRAGTRAP : " << this->_name + " " << COLOR_DEF;
+    std::cout << "[ COPY Constructor ]\n";
+}
 
 FragTrap::~FragTrap() {
     std::cout << COLOR_B << "FRAGTRAP : " << this->_name + " " << COLOR_DEF;
     std::cout << "[ DEF Destructor ]\n";
 }
 
-//FragTrap &FragTrap::operator=(const FragTrap &anotherFragTrap) {
-//    ClapTrap::operator=(anotherFragTrap);
-//    return *this;
-//}
+FragTrap &FragTrap::operator=(const FragTrap &anotherFragTrap) {
+    ClapTrap::operator=(anotherFragTrap);
+    return *this;
+}
 
 /**
  * * * MEMBER FUNCTIONS

@@ -10,17 +10,20 @@
  *  CONSTRUCTOR & DESTRUCTOR & COPY CONSTRUCTOR
  */
 
-DiamondTrap::DiamondTrap(std::string name): ClapTrap(name + "_clap_name"),
+DiamondTrap::DiamondTrap(std::string name): ClapTrap(name + "_clap_name", 100, 50, 30),
                                             ScavTrap(name),
                                             FragTrap(name),
                                             _name(name)
 {
-    this->_hitPoints = FragTrap::_hitPoints;
-    this->_energyPoints = ScavTrap::_energyPoints;
-    this->_damage = FragTrap::_damage;
     std::cout << COLOR_B << "DIAMONDTRAP : " << this->_name + " " << COLOR_DEF;
     std::cout << "[ DEF Constructor ]\n";
 }
+//DiamondTrap::DiamondTrap(std::string name): ClapTrap(name + "_clap_name", 100, 50, 30),
+//                                            _name(name)
+//{
+//    std::cout << COLOR_B << "DIAMONDTRAP : " << this->_name + " " << COLOR_DEF;
+//    std::cout << "[ DEF Constructor ]\n";
+//}
 
 DiamondTrap::~DiamondTrap() {
     std::cout << COLOR_B << "DIAMONDTRAP : " << this->_name + " " << COLOR_DEF;

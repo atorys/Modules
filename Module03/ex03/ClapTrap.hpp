@@ -16,10 +16,11 @@ protected:
 public:
     ClapTrap();
     ClapTrap(std::string name);
-//    ClapTrap(ClapTrap const &anotherClapTrap);
-    ~ClapTrap();
+    ClapTrap(std::string name, unsigned int hP, unsigned int eP, unsigned int damage);
+    ClapTrap(ClapTrap const &anotherClapTrap);
+    virtual ~ClapTrap();
 
-//    ClapTrap    &operator=(const ClapTrap &anotherClapTrap);
+    ClapTrap    &operator=(const ClapTrap &anotherClapTrap);
 
     void attack(std::string const &target);
     void takeDamage(unsigned int amount);
