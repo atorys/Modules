@@ -10,11 +10,11 @@ int main( void ) {
     Point   b(2.3, 4.6);
     Point   c(a);
 
-    Point   const A1(4.6, -1.02);
-    Point   const A2(6.3, 4.38);
-    Point   const A3(12.14, 2.58);
+    Point   const A1(10, 0);
+    Point   const A2(20, 5);
+    Point   const A3(4, 8);
 
-    Point   const P(7.78, 2.38);
+    Point   const P(6.5, 5);
 
     if (bsp(A1, A2, A3, P))
         std::cout << "point is inside\n";
