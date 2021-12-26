@@ -127,7 +127,14 @@ Fixed   Fixed::operator*(const Fixed &anotherFixed) {
 
 Fixed   Fixed::operator/(const Fixed &anotherFixed) {
     Fixed   quotient(*this);
-    quotient.setRawBits(this->getRawBits() * (1 << _bits) / anotherFixed.getRawBits() );
+    try {
+        if (anotherFixed.getRawBits() == 0)
+            throw ("can not divide by zero!\n");
+        quotient.setRawBits(this->getRawBits() * (1 << _bits) / anotherFixed.getRawBits());
+    }
+    catch (const char *exception) {
+        std::cerr << "Error : " << exception;
+    }
     return quotient;
 }
 
