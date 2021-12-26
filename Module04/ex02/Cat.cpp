@@ -49,8 +49,6 @@ void Cat::makeSound() const {
 
 Cat &Cat::operator=(const Cat &refCat) {
     Animal::operator=(refCat);
-	if (this->_brains)
-		delete _brains;
 	this->_brains = new Brain(*refCat._brains);
     return *this;
 }

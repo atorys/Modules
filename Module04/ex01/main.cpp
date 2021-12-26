@@ -1,28 +1,61 @@
 //
-// Created by atory on 11.12.2021.
+// Created by atory on 26.12.2021.
 //
 
 #include <iostream>
 #include "Animal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
+#define ARRAY_LEN	4
+
+void createAnimalArray(Animal*	animals[])
+{
+	for (int i = 0; i < ARRAY_LEN; i++)
+	{
+		if (i < ARRAY_LEN / 2)
+			animals[i] = new Cat();
+		else
+			animals[i] = new Dog();
+	}
+}
+
+void deleteAnimalArray(Animal*	animals[])
+{
+	for (int i = 0; i < ARRAY_LEN; i++)
+		delete animals[i];
+}
 
 int main(void) {
-    const Animal* meta = new Animal();
-    const Animal* j = new Dog();
-    const Animal* i = new Cat();
+	std::cout << "		TEST 1\n";
+	std::cout << "---------------------------------------\n";
+	{
+		const Animal *j = new Dog();
+		const Animal *i = new Cat();
 
-    std::cout << "-----------------------------\n";
+		i->makeSound(); //will output the cat sound!
+		j->makeSound();
 
-    std::cout << j->getType() << " " << std::endl;
-    std::cout << i->getType() << " " << std::endl;
-    i->makeSound(); //will output the cat sound!
-    j->makeSound();
-    meta->makeSound();
+		delete j;//should not create a leak
+		delete i;
+	}
 
-    std::cout << "-----------------------------\n";
-    delete meta;
-    delete j;
-    delete i;
-    return 0;
+	std::cout << "		TEST 2\n";
+	std::cout << "---------------------------------------\n";
+	{
+		Animal*	animals[ARRAY_LEN];
+
+		createAnimalArray(animals);
+		animals[1]->makeSound();
+		animals[3]->makeSound();
+
+		deleteAnimalArray(animals);
+	}
+
+	std::cout << "		TEST 3\n";
+	std::cout << "---------------------------------------\n";
+	{
+		Dog dog;
+		Dog tmp = dog;
+	}
+	return 0;
 }

@@ -2,7 +2,6 @@
 // Created by atory on 26.12.2021.
 //
 
-
 #include "Dog.hpp"
 #define COLOR_B     "\033[36m"
 #define COLOR_DEF   "\033[0m"
