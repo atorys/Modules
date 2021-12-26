@@ -26,11 +26,11 @@ public:
     void takeDamage(unsigned int amount);
     void beRepaired(unsigned int amount);
 
-    std::string const   &getName() const;
+    virtual std::string const   &getName() const;
     unsigned int        getHitPoints() const;
     unsigned int        getDamage() const;
 
-    void displayName() const;
+    virtual void displayName() const;
     void displayHit() const;
     void displayEnergy() const;
 };

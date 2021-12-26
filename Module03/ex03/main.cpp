@@ -6,11 +6,13 @@
 #include "DiamondTrap.hpp"
 
 int main(void) {
-    DiamondTrap     dima("Dimon");
+    DiamondTrap     dima("Dima");
 
     std::cout << "\n";
     dima.ScavTrap::attack("somebody");
     dima.whoAmI();
+    dima.guardGate();
     dima.highFivesGuys();
+    std::cout << "\n";
     return 0;
 }
