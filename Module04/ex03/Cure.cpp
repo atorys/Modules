@@ -7,16 +7,24 @@
 /**
  *  CONSTRUCTOR & DESTRUCTOR & COPY CONSTRUCTOR
  */
-Cure::Cure(): AMateria("cure") {}
-Cure::Cure(const std::string &type): AMateria(type) {}
-Cure::Cure(const Cure &refCure): AMateria(refCure) {}
-Cure::~Cure() {}
+Cure::Cure(): AMateria("cure") {
+//	std::cout << "[ DEF Constructor ] CURE\n";
+}
+Cure::Cure(const std::string &type): AMateria(type) {
+//	std::cout << "[ DEF Constructor ] CURE\n";
+}
+Cure::Cure(const Cure &refCure): AMateria(refCure) {
+//	std::cout << "[ COPY Constructor ] CURE\n";
+}
+Cure::~Cure() {
+//	std::cout << "[ DEF Destructor ] CURE\n";
+}
 
 /**
  * * * MEMBER FUNCTIONS
  */
 AMateria *Cure::clone() const {
-	return (new Cure(*this));
+	return (new Cure(this->getType()));
 }
 
 void Cure::use(ICharacter& target) {

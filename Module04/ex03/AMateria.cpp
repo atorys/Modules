@@ -3,17 +3,26 @@
 //
 
 #include "AMateria.hpp"
+#define COLOR_B     "\033[37m"
+#define COLOR_DEF   "\033[0m"
 
 /**
  *  CONSTRUCTOR & DESTRUCTOR & COPY CONSTRUCTOR
  */
 
-AMateria::AMateria(): _type("no type") {}
-AMateria::AMateria(const std::string &type): _type(type) {}
+AMateria::AMateria(): _type("no type") {
+//	std::cout << "[ DEF Constructor ] AMATERIA\n";
+}
+AMateria::AMateria(const std::string &type): _type(type) {
+//	std::cout << "[ DEF Constructor ] AMATERIA\n";
+}
 AMateria::AMateria(const AMateria &refMateria) {
 	*this = refMateria;
+//	std::cout << "[ COPY Constructor ] AMATERIA\n";
 }
-AMateria::~AMateria() {}
+AMateria::~AMateria() {
+//	std::cout << "[ DEF Destructor ] AMATERIA\n";
+}
 
 /**
  * * * MEMBER FUNCTIONS
@@ -37,4 +46,3 @@ AMateria &AMateria::operator=(const AMateria &refMateria) {
 const std::string &AMateria::getType() const {
 	return this->_type;
 }
-

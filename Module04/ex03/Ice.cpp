@@ -7,21 +7,29 @@
 /**
  *  CONSTRUCTOR & DESTRUCTOR & COPY CONSTRUCTOR
  */
-Ice::Ice(): AMateria("ice") {}
-Ice::Ice(const std::string &type): AMateria(type) {}
-Ice::Ice(const Ice &refIce): AMateria(refIce) {}
-Ice::~Ice() {}
+Ice::Ice(): AMateria("ice") {
+//	std::cout << "[ DEF Constructor ] ICE\n";
+}
+Ice::Ice(const std::string &type): AMateria(type) {
+//	std::cout << "[ DEF Constructor ] ICE\n";
+}
+Ice::Ice(const Ice &refIce): AMateria(refIce) {
+//	std::cout << "[ COPY Constructor ] ICE\n";
+}
+Ice::~Ice() {
+//	std::cout << "[ DEF Destructor ] ICE\n";
+}
 
 /**
  * * * MEMBER FUNCTIONS
  */
 
 AMateria *Ice::clone() const {
-	return (new Ice(*this));
+	return (new Ice(this->getType()));
 }
 
 void Ice::use(ICharacter& target) {
-	std::cout <<  "* shoots an ice bolt at " << target.getName() << " *\n" ;
+	std::cout << "* shoots an ice bolt at " << target.getName() << " *\n" ;
 }
 
 /**

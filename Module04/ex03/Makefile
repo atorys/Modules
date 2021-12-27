@@ -5,13 +5,16 @@ FILES	=	main.cpp	\
 			AMateria.cpp\
 			Ice.cpp		\
 			Cure.cpp	\
-			Character.cpp
+			Character.cpp\
+			MateriaSource.cpp
 
 HEADER	=	AMateria.hpp\
 			Ice.hpp		\
 			Cure.hpp	\
 			ICharacter.hpp\
-			Character.hpp
+			Character.hpp\
+			IMateriaSource.hpp\
+			MateriaSource.hpp
 OBJ_DIR	=	./obj/
 OBJ		=	$(addprefix $(OBJ_DIR), $(FILES:.cpp=.o))
 FLAGS	=	-Wall -Wextra -Werror -std=c++98

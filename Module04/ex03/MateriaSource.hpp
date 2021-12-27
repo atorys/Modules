@@ -5,12 +5,18 @@
 #ifndef MATERIASOURCE_HPP
 #define MATERIASOURCE_HPP
 
-class IMateriaSource
-{
+#include "IMateriaSource.hpp"
+
+class MateriaSource: public IMateriaSource {
+	AMateria*	_sources[4];
 public:
-	virtual ~IMateriaSource() {}
-	virtual void learnMateria(AMateria*) = 0;
-	virtual AMateria* createMateria(std::string const & type) = 0;
+	MateriaSource();
+	MateriaSource(const MateriaSource& refSource);
+	virtual ~MateriaSource();
+
+	MateriaSource&	operator=(const MateriaSource& refSource);
+	virtual void learnMateria(AMateria* m);
+	virtual AMateria* createMateria(std::string const & type);
 };
 
 #endif
