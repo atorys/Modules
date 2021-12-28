@@ -12,3 +12,5 @@ switch case
 - Module 03 :  inheritance
 
 - Module 04 :  subtype polymorphism, abstract classes, interfaces
+
+- Module 05 :  repetition and exceptions
