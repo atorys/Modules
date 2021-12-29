@@ -8,7 +8,7 @@
  *  CONSTRUCTOR & DESTRUCTOR & COPY CONSTRUCTOR
  */
 Bureaucrat::Bureaucrat(): _name("no name"), _grade(150) {
-	std::cout << "[ DEF Constructor ]\n";
+	std::cout << "[ DEF Constructor ] : BUREAUCRAT\n";
 }
 
 Bureaucrat::Bureaucrat(const std::string &name, unsigned int grade) \
@@ -21,30 +21,38 @@ Bureaucrat::Bureaucrat(const std::string &name, unsigned int grade) \
 	else if (grade > 150)
 		throw (GradeTooLowException());
 	this->_grade = grade;
-	std::cout << "[ DEF Constructor ]\n";
+	std::cout << "[ DEF Constructor ] : BUREAUCRAT\n";
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &refBur) {
 	*this = refBur;
-	std::cout << "[ COPY Constructor ]\n";
+	std::cout << "[ COPY Constructor ] : BUREAUCRAT\n";
 }
 
 Bureaucrat::~Bureaucrat() {
-	std::cout << "[ DEF Destructor ]\n";
+	std::cout << "[ DEF Destructor ] : BUREAUCRAT\n";
 }
-
-Bureaucrat::GradeTooLowException::GradeTooLowException() {
-	this->_errorMessage = "Grade is too low ! \n";
-}
-
-Bureaucrat::GradeTooHighException::GradeTooHighException() {
-	this->_errorMessage = "Grade is too high ! \n";
-}
-
 
 /**
  * * * MEMBER FUNCTIONS
  */
+
+void Bureaucrat::signForm(Form &refForm) const {
+	refForm.beSigned(*this);
+}
+
+
+/**
+ * EXCEPTION HANDLING
+ */
+
+Bureaucrat::GradeTooLowException::GradeTooLowException() {
+	this->_errorMessage = "grade is too low ! \n";
+}
+
+Bureaucrat::GradeTooHighException::GradeTooHighException() {
+	this->_errorMessage = "grade is too high ! \n";
+}
 
 const char *Bureaucrat::GradeTooLowException::what() const throw() {
 	return this->_errorMessage.c_str();
@@ -52,19 +60,13 @@ const char *Bureaucrat::GradeTooLowException::what() const throw() {
 
 Bureaucrat::GradeTooLowException::~GradeTooLowException() throw(){}
 
-const std::string &Bureaucrat::GradeTooLowException::getMessage() const {
-	return this->_errorMessage;
-}
-
 const char *Bureaucrat::GradeTooHighException::what() const throw(){
 	return this->_errorMessage.c_str();
 }
 
 Bureaucrat::GradeTooHighException::~GradeTooHighException() throw(){}
 
-const std::string &Bureaucrat::GradeTooHighException::getMessage() const {
-	return this->_errorMessage;
-}
+
 
 /**
  * GETTERS / SETTERS / OVERLOADING

@@ -6,6 +6,9 @@
 #define BUREAUCRAT_HPP
 
 #include "iostream"
+#include "Form.hpp"
+
+class Form;
 
 class Bureaucrat {
 	const std::string 	_name;
@@ -17,6 +20,8 @@ public:
 	Bureaucrat(const Bureaucrat& refBur);
 	~Bureaucrat();
 
+	void signForm(Form& refForm) const;
+
 	const std::string&	getName() const;
 	void 				setName(const std::string& name);
 	unsigned int		getGrade() const;
@@ -27,7 +32,6 @@ public:
 		GradeTooHighException();
 		virtual ~GradeTooHighException() throw();
 
-		const std::string& getMessage() const;
 		virtual const char *what() const throw();
 	};
 	class GradeTooLowException : public std::exception {
@@ -36,7 +40,6 @@ public:
 		GradeTooLowException();
 		virtual ~GradeTooLowException() throw();
 
-		const std::string& getMessage() const;
 		virtual const char*	what() const throw();
 	};
 
