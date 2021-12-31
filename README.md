@@ -14,3 +14,5 @@ switch case
 - Module 04 :  subtype polymorphism, abstract classes, interfaces
 
 - Module 05 :  repetition and exceptions
+
+- Module 06 :  casts
