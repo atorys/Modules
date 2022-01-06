@@ -1,10 +1,10 @@
 #:::: INFO :::::::::::::::::::::::::::::::::::::::::::::::::::
-NAME	=	converter
+NAME	=	test
 
 FILES	=	main.cpp\
-			Scalar.cpp
+			Base.cpp
 
-HEADERS =	Scalar.hpp
+HEADERS =	Base.hpp
 OBJ_DIR	=	./obj/
 OBJ		=	$(addprefix $(OBJ_DIR), $(FILES:.cpp=.o))
 FLAGS	=	-Wall -Wextra -Werror -std=c++98
