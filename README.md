@@ -16,3 +16,5 @@ switch case
 - Module 05 :  repetition and exceptions
 
 - Module 06 :  casts
+
+- Module 07 :  templates
