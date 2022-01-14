@@ -18,3 +18,5 @@ switch case
 - Module 06 :  casts
 
 - Module 07 :  templates
+
+- Module 08 :  templated containers, iterators, algorithms
