@@ -22,6 +22,7 @@ public:
 
 	void	convert(void) const;
 	int 	containsChars() const;
+	int 	pseudoLiteral() const;
 	Scalar&	operator=(const Scalar& refOther);
 };
 

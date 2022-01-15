@@ -19,12 +19,6 @@ DiamondTrap::DiamondTrap(std::string name): ClapTrap(name + "_clap_name", 100, 5
     std::cout << COLOR_B << "DIAMONDTRAP : " << this->_name + " " << COLOR_DEF;
     std::cout << "[ DEF Constructor ]\n";
 }
-//DiamondTrap::DiamondTrap(std::string name): ClapTrap(name + "_clap_name", 100, 50, 30),
-//                                            _name(name)
-//{
-//    std::cout << COLOR_B << "DIAMONDTRAP : " << this->_name + " " << COLOR_DEF;
-//    std::cout << "[ DEF Constructor ]\n";
-//}
 
 DiamondTrap::DiamondTrap(const DiamondTrap &anotherDiamondTrap) {
     *this = anotherDiamondTrap;
@@ -37,7 +31,7 @@ DiamondTrap::~DiamondTrap() {
     std::cout << "[ DEF Destructor ]\n";
 }
 
-void DiamondTrap::whoAmI() {
+void DiamondTrap::whoAmI() {::
     std::cout << "My name is " << this->_name << '\n';
     std::cout << "My parent-ClapTrap name is " << ClapTrap::_name << '\n';
 }

@@ -42,4 +42,23 @@ int main() {
 	{
 		std::cout << COLOR_B << "Error : " << e.what() << COLOR_DEF;
 	}
+
+	std::cout << "\n-----------------------------TEST3\n";
+	try
+	{
+		Form form1("1st form", 3, 3);
+		Form form2(form1);
+		Form form3("3rd form", 100, 100);
+
+		std::cout << form1;
+		std::cout << form2;
+		std::cout << form3;
+
+		form3 = form1;
+		std::cout << form3;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << COLOR_B << "Error : " << e.what() << COLOR_DEF;
+	}
 }

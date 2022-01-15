@@ -105,8 +105,8 @@ Form &Form::operator=(const Form &refForm) {
 		return *this;
 	const_cast<std::string&>(this->_name) = refForm.getName();
 	this->_sign = refForm.getSign();
-//	this->_grade2sign = refForm.getGradeSign();
-//	this->_grade2exec = refForm.getExecSign();
+	const_cast<unsigned int&>(this->_grade2sign) = refForm.getGradeSign();
+	const_cast<unsigned int&>(this->_grade2exec) = refForm.getExecSign();
 	return *this;
 }
 

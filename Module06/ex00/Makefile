@@ -2,9 +2,9 @@
 NAME	=	converter
 
 FILES	=	main.cpp\
-			Scalar.cpp
+			ScalarConversion.cpp
 
-HEADERS =	Scalar.hpp
+HEADERS =	ScalarConversion.hpp
 OBJ_DIR	=	./obj/
 OBJ		=	$(addprefix $(OBJ_DIR), $(FILES:.cpp=.o))
 FLAGS	=	-Wall -Wextra -Werror -std=c++98

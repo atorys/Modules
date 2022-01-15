@@ -3,7 +3,6 @@
 //
 
 #include "span.hpp"
-//#include "span.cpp"
 
 int main() {
 	std::cout << "------------------------------- TEST 1\n";

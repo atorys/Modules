@@ -2,7 +2,7 @@
 // Created by atory on 06.01.2022.
 //
 
-#include "Scalar.hpp"
+#include "ScalarConversion.hpp"
 /*
  * CONSTRUCTOR / DESTRUCTOR / COPY CONSTRUCTOR
  */
@@ -80,13 +80,13 @@ void Scalar::_convertFloat() const {
 			throw ("Non displayable\n");
 		f = static_cast<float>(this->_literal[0]);
 	}
-	else if (this->_literal.length() > 0) {
+	else if (this->_literal.length() > 0 && (!this->pseudoLiteral() || !this->containsChars())) {
 		f = static_cast<float>(atof(this->_literal.c_str()));
 	}
 	else
 		throw ("impossible\n");
 	std::cout << f;
-	if (f - static_cast<int>(f) == 0.000000)
+	if (f - static_cast<int>(f) == 0.)
 		std::cout << ".0";
 	std::cout << "f\n";
 }
@@ -99,7 +99,7 @@ void Scalar::_convertDouble() const {
 			throw ("Non displayable\n");
 		d = static_cast<float>(this->_literal[0]);
 	}
-	else if (this->_literal.length() > 0) {
+	else if (this->_literal.length() > 0 && (!this->pseudoLiteral() || !this->containsChars())) {
 		d = static_cast<float>(atof(this->_literal.c_str()));
 	}
 	else
@@ -115,6 +115,15 @@ int Scalar::containsChars() const {
 		if (!std::isdigit(this->_literal[i]) && this->_literal[i] != '.' && this->_literal[i] != 'f')
 			return 1;
 	return 0;
+}
+
+int Scalar::pseudoLiteral() const {
+	return (strcmp("nan", this->_literal.c_str())\
+			&& strcmp("+inf", this->_literal.c_str())\
+			&& strcmp("-inf", this->_literal.c_str())\
+			&& strcmp("nanf", this->_literal.c_str())\
+			&& strcmp("+inff", this->_literal.c_str())\
+			&& strcmp("-inff", this->_literal.c_str()));
 }
 
 /*

@@ -30,13 +30,13 @@ public:
  * Constructor, Copy Constructor, Destructor
  */
 template <typename T>
-Array<T>::Array(): _head(NULL), _size(0) {}
+Array<T>::Array(): _head(nullptr), _size(0) {}
 
 template <typename T>
 Array<T>::Array(unsigned int n): _head(new T[n]), _size(n) {}
 
 template <typename T>
-Array<T>::Array(const Array<T> &array) {
+Array<T>::Array(const Array<T> &array): _head(nullptr) {
 	*this = array;
 }
 

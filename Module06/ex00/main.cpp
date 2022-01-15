@@ -2,7 +2,7 @@
 // Created by atory on 30.12.2021.
 //
 
-#include "Scalar.hpp"
+#include "ScalarConversion.hpp"
 
 int main(int ac, char **av)
 {

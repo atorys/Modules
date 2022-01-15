@@ -8,52 +8,57 @@
 #define COLOR_DEF "\033[0m"
 
 int main() {
-	std::cout << "-----------------------------TEST1\n";
 
-	Bureaucrat	steeve("Steeve", 1);
+	Bureaucrat	steeve("Steeve", 100);
 	Intern 		someRandomIntern;
 
-	try {
-		Form* rrf; // robotomy request
 
+	std::cout << "-----------------------------TEST1\n";
+
+	Form* rrf; // robotomy request
+	try {
 		rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+		std::cout << *rrf;
 
 		steeve.signForm(*rrf);
 		steeve.executeForm(*rrf);
-		delete rrf;
 	}
 	catch (std::exception &e)
 	{
 		std::cout << COLOR_B << "Error : " << e.what() << COLOR_DEF;
 	}
+	delete rrf;
+
 
 	std::cout << "\n-----------------------------TEST2\n";
-	try {
-		Form* ppr; // "presidential pardon
 
+	Form* ppr; // "presidential pardon
+	try {
 		ppr = someRandomIntern.makeForm("presidential pardon", "kitty");
+		std::cout << *ppr;
+
 		steeve.signForm(*ppr);
 		steeve.executeForm(*ppr);
-
-		delete ppr;
 	}
 	catch (std::exception &e)
 	{
 		std::cout << COLOR_B << "Error : " << e.what() << COLOR_DEF;
 	}
+	delete ppr;
+
 
 	std::cout << "\n-----------------------------TEST3\n";
-	try {
-		Form* scf; // shrubbery creation
 
+	Form* scf; // shrubbery creation
+	try {
 		scf = someRandomIntern.makeForm("my new form", "home");
+
 		steeve.signForm(*scf);
 		steeve.executeForm(*scf);
-
-		delete scf;
 	}
 	catch (std::exception &e)
 	{
 		std::cout << COLOR_B << "Error : " << e.what() << COLOR_DEF;
 	}
+	delete scf;
 }
