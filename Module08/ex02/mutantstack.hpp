@@ -24,6 +24,8 @@ public:
 	const_iterator 	begin(void) const;
 	const_iterator 	end(void) const;
 
+	virtual void pop();
+
 	MutantStack&	operator=(const MutantStack& stack);
 };
 

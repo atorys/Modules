@@ -9,7 +9,7 @@
 #include "iostream"
 
 template <typename T>
-typename T::const_iterator easyfind(const T& container, int value)
+typename T::const_iterator easyfind(T const& container, int value)
 {
 	typename T::const_iterator i;
 	i = std::find(container.begin(), container.end(), value);

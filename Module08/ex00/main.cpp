@@ -8,6 +8,7 @@
 
 int main()
 {
+	std::cout << "---------------------------------------- TEST1 \n";
 	{
 		std::list<int> list;
 
@@ -25,6 +26,8 @@ int main()
 			std::cout << e.what();
 		}
 	}
+
+	std::cout << "---------------------------------------- TEST2 \n";
 	{
 		std::vector<int> vector;
 		for (int i = 10; i > 0; i--)

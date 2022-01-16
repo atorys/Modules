@@ -40,25 +40,31 @@ void Span::addNumber(int number) throw(std::exception) {
 int Span::shortestSpan() const throw(std::exception) {
 	if (this->_size < 2)
 		throw std::out_of_range("not enough data to analyze the shortest span.\n");
-	std::set<int>::const_iterator	i1, i2;
-	i1 = this->_set.begin();
-	i2 = i1;
-	while (*i1 == *i2 && i2 != --(this->_set.end()))
-		i2++;
-	return (*i2 - *i1);
+
+	std::multiset<int>::const_iterator i_min, i_next_min;
+
+	i_min = std::min_element(this->_set.begin(), this->_set.end());
+	i_next_min = std::upper_bound(this->_set.begin(), this->_set.end(), *i_min);
+
+	if (i_next_min == this->_set.end())
+		i_next_min = i_min;
+	return (*i_next_min - *i_min);
 }
+
 int Span::longestSpan() const throw(std::exception) {
 	if (this->_size < 2)
 		throw std::out_of_range("not enough data to analyze the longest span.\n");
-	std::set<int>::const_iterator	i1, i2;
-	i1 = this->_set.begin();
-	i2 = this->_set.end();
-	return (*(--i2) - *i1);
+
+	std::multiset<int>::const_iterator	i_min, i_max;
+
+	i_min = std::min_element(this->_set.begin(), this->_set.end());
+	i_max = std::max_element(this->_set.begin(), this->_set.end());
+	return (*i_max - *i_min);
 }
 
 void Span::getSet() const {
 	std::cout << "[ ";
-	std::set<int>::const_iterator i = this->_set.begin();
+	std::multiset<int>::const_iterator i = this->_set.begin();
 	while (i != this->_set.end())
 		std::cout << *i++ << " ";
 	std::cout << "]\n";
